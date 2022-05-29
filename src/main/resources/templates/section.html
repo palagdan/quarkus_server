@@ -1,0 +1,33 @@
+{#include based}
+
+
+    {#title} Users {/title}
+
+    {#body}
+        <div>
+            <article class="media content-section">
+                <div class="media-body">
+                    <div class="article-metadata">
+
+                    </div>
+                    <p>Name: {_var.name}</p>
+                    <p>Surname: {_var.surname}</p>
+                    <p>Mail: {_var.mail}</p>
+                    <p>Telephone Number: {_var.telephone_number}</p>
+                </div>
+        <div>
+        <form action="/api/user/{_var.id}/edit" method="GET" name="update-{_var.id}">
+            <input  class="btn btn-primary" value="Update" type="submit">
+        </form>
+        <br>
+        <form action="/api/user/{_var.id}/delete" method="POST" name="delete-{_var.id}">
+            <input  class="btn btn-danger" value="Delete" type="submit">
+        </form>
+        </div>
+            </article>
+        </div>
+    {/body}
+
+
+
+{/include}

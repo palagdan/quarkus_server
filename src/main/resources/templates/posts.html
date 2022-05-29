@@ -1,0 +1,39 @@
+
+{#include based}
+
+
+    {#title} Posts {/title}
+
+    {#body}
+        <div>
+
+        {#if _var.size == 0}
+            <p class="text-secondary">No posts found</p>
+
+            {#else}
+                {#for post in _var}
+                    <article class="media content-section">
+                    <div class="media-body">
+                        <div class="article-metadata">
+                            <a href="/api/user/{post.user.id}">{post.user.username}</a>
+                            <small class="text-muted">{post.date}</small>
+                        </div>
+                        <h1>{post.title}</h1>
+                        <p>{post.description}</p>
+                    </div>
+
+                    <form action="/api/post/{post.id}/delete" method="POST" name="delete-{post.id}">
+                        <input  class="btn btn-danger" value="Delete" type="submit">
+                    </form>
+                    </article>
+                {/for}
+        {/if}
+
+        <form action="/api/post/new" method="get" name="form">
+            <input  class="btn btn-primary" value="Create new Post" type="submit">
+        </form>
+        </div>
+
+    {/body}
+
+{/include}

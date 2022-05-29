@@ -1,0 +1,48 @@
+{#include based}
+
+
+    {#title}Update user{/title}
+
+
+    {#body}
+
+        <form action="/api/user/{user.id}/edit" method="POST" name="userForm" enctype="multipart/form-data">
+
+            <div class="form-row align-items-center ml-1 mr-1">
+
+                <div class="mb-2 mr-sm-2 pt-2">
+                    <label for="">Update User: </label>
+                </div>
+
+                <div class="mb-2 mr-sm-2">
+                    <label class="sr-only" for="username">Username: </label>
+                    <input type="text" name="username" class="form-control" id="username" placeholder="{user.username}">
+                </div>
+                <div class="mb-2 mr-sm-2">
+                    <label class="sr-only" for="name">Name: </label>
+                    <input type="text" name="name" class="form-control" id="name" placeholder="{user.name}">
+                </div>
+                <div class="mb-2 mr-sm-2">
+                    <label class="sr-only" for="surname">Surname: </label>
+                    <input type="text" name="surname" class="form-control" id="surname" placeholder="{user.surname}">
+                </div>
+                <div class="mb-2 mr-sm-2">
+                    <label class="sr-only" for="mail">Mail: </label>
+                    <input type="text" name="mail" class="form-control" id="mail" placeholder="{user.mail}">
+                </div>
+                <div class="mb-2 mr-sm-2">
+                    <label class="sr-only" for="telephone_number">Telephone Number: </label>
+                    <input type="text" name="telephone_number" class="form-control" id="telephone_number" placeholder="{user.telephone_number}">
+                </div>
+
+
+                <button type="submit" class="btn btn-primary mb-2">Update</button>
+            </div>
+        </form>
+
+    {/body}
+
+
+
+{/include}
+

@@ -1,0 +1,36 @@
+
+{#include based}
+
+
+    {#title} Users {/title}
+
+    {#body}
+        <div>
+
+        {#if _var.size == 0}
+            <p class="text-secondary">No users found</p>
+
+        {#else}
+        {#for user in _var}
+            <article class="media content-section">
+                <div class="media-body">
+                    <div class="article-metadata">
+                        <a href="user/{user.id}">{user.username}</a>
+                    </div>
+                    <p>Name: {user.name}</p>
+                    <p>Surname: {user.surname}</p>
+                    <p>Mail: {user.mail}</p>
+                    <p>Telephone Number: {user.telephone_number}</p>
+                </div>
+            </article>
+        {/for}
+        {/if}
+
+            <form action="/api/user/new" method="get" name="form">
+                <input  class="btn btn-primary" value="Create new User" type="submit">
+            </form>
+        </div>
+
+    {/body}
+
+{/include}

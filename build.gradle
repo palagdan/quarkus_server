@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+    id 'io.quarkus'
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
+
+    implementation 'io.quarkus:quarkus-hibernate-orm-panache'
+
+    implementation('io.quarkus:quarkus-resteasy')
+    implementation('io.rest-assured:rest-assured')
+    implementation('io.quarkus:quarkus-qute')
+    implementation('io.quarkus:quarkus-resteasy-jackson')
+    implementation('io.quarkus:quarkus-resteasy-qute')
+    implementation 'org.projectlombok:lombok:1.18.24'
+    implementation 'io.quarkus:quarkus-jdbc-postgresql'
+    implementation 'io.quarkus:quarkus-arc'
+    testImplementation 'io.quarkus:quarkus-junit5'
+    implementation 'org.jboss.resteasy:resteasy-multipart-provider'
+
+
+
+    implementation("io.quarkus:quarkus-hibernate-orm-rest-data-panache")
+}
+
+group 'com.palagdan'
+version '1.0.0-SNAPSHOT'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+compileJava {
+    options.encoding = 'UTF-8'
+    options.compilerArgs << '-parameters'
+}
+
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
