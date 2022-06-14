@@ -1,6 +1,7 @@
 
 ## This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
+<img width="1280" alt="Screenshot 2022-06-14 at 18 12 31" src="https://user-images.githubusercontent.com/98457577/173625547-18a4a739-f29d-4fa4-a6ae-18a6f2b0d6fb.png">
 
 ## Running the application in dev mode
 
